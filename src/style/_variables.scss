@@ -1,0 +1,16 @@
+:root {
+  --color-primary-code: 255, 255, 255;
+  --color-primary: rgb(var(--color-primary-code));
+
+  --color-accent-code: 255, 51, 0;
+  --color-accent: rgb(var(--color-accent-code));
+
+  --color-bg-primary-code: 13, 26, 47;
+  --color-bg-primary: rgb(var(--color-bg-primary-code));
+
+  --color-bg-secondary-code: 28, 45, 74;
+  --color-bg-secondary: rgb(var(--color-bg-secondary-code));
+
+  --color-error-code: 255, 192, 203;
+  --color-error: rgb(var(--color-error-code));
+}
