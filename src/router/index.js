@@ -8,32 +8,33 @@ const router = new VueRouter({
   mode: "history",
   routes: [
     {
-      path: "/"
+      path: "/",
+      component: () => import("@/views/Home.vue"),
     },
     {
       path: "/signUp",
-      component: () => import("../views/SignUp.vue")
+      component: () => import("@/views/SignUp.vue"),
     },
     {
       path: "/signIn",
-      component: () => import("../views/SignIn.vue")
+      component: () => import("@/views/SignIn.vue"),
     },
     {
       path: "/posters",
       meta: { auth: true },
-      component: () => import("../views/Home.vue")
+      component: () => import("@/views/Home.vue"),
     },
     {
       path: "/post-editor",
       meta: { auth: true },
-      component: () => import("../views/Poster.vue")
-    }
-  ]
+      component: () => import("@/views/Poster.vue"),
+    },
+  ],
 });
 
 router.beforeEach((to, from, next) => {
   const currentUser = store.getters.getUid;
-  const requireAuth = to.matched.some(route => route.meta.auth);
+  const requireAuth = to.matched.some((route) => route.meta.auth);
   if (requireAuth && !currentUser) {
     next("/SignUp");
   } else {
